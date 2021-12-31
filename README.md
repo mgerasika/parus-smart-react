@@ -124,3 +124,15 @@ By default, this starter uses Yarn 1 (Classic), but this choice is yours. If you
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for more information.
+
+
+
+heroku create 
+heroku container:login
+heroku container:push web
+heroku stack:set container
+
+git add .
+git commit -am "Changes to my-project noted"
+git push heroku HEAD:main
+heroku open
