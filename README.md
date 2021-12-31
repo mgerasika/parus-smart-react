@@ -131,7 +131,8 @@ heroku create
 heroku container:login
 heroku container:push web
 heroku stack:set container
-
+heroku container:release web
+yar
 git add .
 git commit -am "Changes to my-project noted"
 git push heroku HEAD:main
