@@ -1,13 +1,23 @@
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
+import Head from 'next/head';
 import React from 'react';
 
 export default function About(): JSX.Element {
     return (
         <>
-			<Navigation />{/* Page Header*/}
-			<Header  title="ОСББ Парус Смарт" subTitle=""/>
-           
+            <Head>
+                <title>Парус Смарт ОСББ</title>
+                <meta
+                    name="description"
+                    content="TypeScript starter for Next.js that includes all you need to build amazing apps"
+                />
+                <link rel="icon" href="/favicon.ico" />
+            </Head>
+            <Navigation />
+            {/* Page Header*/}
+            <Header title="ОСББ Парус Смарт" subTitle="" />
+
             {/* Main Content*/}
             <div className="container px-4 px-lg-5">
                 <div className="row gx-4 gx-lg-5 justify-content-center">
@@ -26,7 +36,7 @@ export default function About(): JSX.Element {
                         </div>
                         {/* Divider*/}
                         <hr className="my-4" />
-                       
+
                         {/* Pager*/}
                         <div className="d-flex justify-content-end mb-4">
                             <a className="btn btn-primary text-uppercase" href="#!">
