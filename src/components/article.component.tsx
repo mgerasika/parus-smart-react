@@ -14,7 +14,7 @@ export const Article = ({ title, id, content, dateObj, showDivider }: IProps): J
             {/* Post preview*/}
             <div className="post-preview">
                 {title && (
-                    <a href={`/${id}`}>
+                    <a>
                         <h2 className="post-title">{title}</h2>
                     </a>
                 )}

@@ -20,7 +20,8 @@ const useGetArticles = (category: EArticleCategory | undefined): UseQueryResult<
     const query =
         category !== undefined
             ? qs.stringify(
-                  {
+				{
+					  sort: 'date:desc',
                       filters: {
                           category: {
                               name: {

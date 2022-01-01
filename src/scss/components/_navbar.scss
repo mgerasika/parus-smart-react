@@ -15,8 +15,10 @@
     font-family: $headings-font-family;
 
 	&.sticky {
-		background-image: url("../../../public/assets/img/nav-bg.png");
-		background-position:bottom;
+		@include media-breakpoint-up(lg) {
+			background-image: url("../../../public/assets/img/nav-bg.png");
+			background-position:bottom;
+		}
 	}
     .navbar-brand {
         font-weight: $headings-font-weight;

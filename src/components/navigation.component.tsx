@@ -3,7 +3,7 @@ import { Sticky } from 'react-sticky';
 
 export const Navigation = (): JSX.Element => {
     return (
-        <Sticky topOffset={300}>
+        <Sticky topOffset={320}>
             {({
                 style,
                 isSticky,
