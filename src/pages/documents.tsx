@@ -1,3 +1,5 @@
+import { EArticleCategory } from '@/api/api-hook';
+import { ArticleList } from '@/components/article-list.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import React from 'react';
@@ -6,38 +8,15 @@ export default function Documents(): JSX.Element {
     return (
         <>
             <Navigation />
-            <Header
-                title="Документи"
-            />
+            <Header title="Документи" />
 
             {/* Post Content*/}
             <article className="mb-4">
                 <div className="container px-4 px-lg-5">
                     <div className="row gx-4 gx-lg-5 justify-content-center">
                         <div className="col-md-10 col-lg-8 col-xl-7">
-                            
-                            <h2 className="section-heading">The Final Frontier</h2>
-                            <p>
-                                There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and
-                                literally, it is a task to occupy the generations. And no matter how much progress one makes,
-                                there is always the thrill of just beginning.
-                            </p>
-                            <p>
-                                There can be no thought of finishing for ‘aiming for the stars.’ Both figuratively and
-                                literally, it is a task to occupy the generations. And no matter how much progress one makes,
-                                there is always the thrill of just beginning.
-                            </p>
-                            <blockquote className="blockquote">
-                                The dreams of yesterday are the hopes of today and the reality of tomorrow. Science has not
-                                yet mastered prophecy. We predict too much for the next year and yet far too little for the
-                                next ten.
-                            </blockquote>
-                            <p>
-                                Spaceflights cannot be stopped. This is not the work of any one man or even a group of men.
-                                It is a historical process which mankind is carrying out in accordance with the natural laws
-                                of human development.
-                            </p>
-                            <h2 className="section-heading">Reaching for the Stars</h2>
+                            <ArticleList category={EArticleCategory.Documents} />
+                            {/* <h2 className="section-heading">Reaching for the Stars</h2>
                             <p>
                                 As we got further and further away, it [the Earth] diminished in size. Finally it shrank to
                                 the size of a marble, the most beautiful you can imagine. That beautiful, warm, living object
@@ -64,7 +43,7 @@ export default function Documents(): JSX.Element {
                                 Placeholder text by
                                 <a href="http://spaceipsum.com/">Space Ipsum</a>· Images by
                                 <a href="https://www.flickr.com/photos/nasacommons/">NASA on The Commons</a>
-                            </p>
+                            </p> */}
                         </div>
                     </div>
                 </div>

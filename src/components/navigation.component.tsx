@@ -1,3 +1,6 @@
+import Script from "next/script";
+import React from "react";
+
 export const Navigation = (): JSX.Element => {
     return (
         <nav className="navbar navbar-expand-lg navbar-light" id="mainNav">
@@ -31,8 +34,13 @@ export const Navigation = (): JSX.Element => {
                             </a>
 						</li>
 						<li className="nav-item">
-                            <a className="nav-link px-lg-3 py-3 py-lg-4" href="/about">
-                                Про ОСББ
+                            <a className="nav-link px-lg-3 py-3 py-lg-4" href="/faq">
+                                Часті питання
+                            </a>
+						</li>
+						<li className="nav-item">
+                            <a className="nav-link px-lg-3 py-3 py-lg-4" href="/feedback">
+                                Опитування
                             </a>
                         </li>
                         <li className="nav-item">
@@ -42,7 +50,7 @@ export const Navigation = (): JSX.Element => {
                         </li>
                     </ul>
                 </div>
-            </div>
+			</div>
         </nav>
     );
 };

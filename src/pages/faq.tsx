@@ -1,31 +1,21 @@
-import { apiHooks } from '@/api/api-hook';
-import { EArticleId } from '@/api/enum';
-import { Article } from '@/components/article.component';
+import { EArticleCategory } from '@/api/api-hook';
+import { ArticleList } from '@/components/article-list.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import React from 'react';
 
-export default function Contact(): JSX.Element {
-    const { data } = apiHooks.useGetArticleById(EArticleId.Contacts);
+export default function FAQ(): JSX.Element {
     return (
         <>
             <Navigation />
-            <Header title="Контакти" />
+            <Header title="Часті питання" />
 
             {/* Main Content*/}
             <main className="mb-4">
                 <div className="container px-4 px-lg-5">
                     <div className="row gx-4 gx-lg-5 justify-content-center">
                         <div className="col-md-10 col-lg-8 col-xl-7">
-                            {data && (
-                                <Article
-                                    showDivider={false}
-                                    content={data.content}
-                                    dateObj={undefined}
-                                    id={data.id}
-                                    title={undefined}
-                                />
-                            )}
+                            <ArticleList category={EArticleCategory.FAQ} />
                         </div>
                     </div>
                 </div>
@@ -66,13 +56,6 @@ export default function Contact(): JSX.Element {
                     </div>
                 </div>
             </footer>
-            {/* Bootstrap core JS*/}
-            {/* Core theme JS*/}
-            {/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/}
-            {/* * *                               SB Forms JS                               * **/}
-            {/* * * Activate your form at https://startbootstrap.com/solution/contact-forms * **/}
-            {/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * **/}
-
             {/* Bootstrap core JS*/}
             {/* Core theme JS*/}
         </>
