@@ -1,10 +1,14 @@
-import { EArticleCategory } from '@/api/api-hook';
+import { apiHooks } from '@/api/api-hook';
+import { EPageId } from '@/api/enum';
+import { EArticleCategory } from '@/api/hooks/api-article.hook';
 import { ArticleList } from '@/components/article-list.component';
+import { Article } from '@/components/article.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import React from 'react';
 
 export default function Documents(): JSX.Element {
+	const { data } = apiHooks.page.useGetPageById(EPageId.Documents);
     return (
         <>
             <Navigation />
@@ -15,7 +19,15 @@ export default function Documents(): JSX.Element {
                 <div className="container px-4 px-lg-5">
                     <div className="row gx-4 gx-lg-5 justify-content-center">
                         <div className="col-md-10 col-lg-8 col-xl-7">
-                            <ArticleList category={EArticleCategory.Documents} />
+						{data && (
+                                <Article
+                                    showDivider={false}
+                                    content={data.content}
+                                    dateObj={undefined}
+                                    id={data.id}
+                                    title={undefined}
+                                />
+                            )}
                             {/* <h2 className="section-heading">Reaching for the Stars</h2>
                             <p>
                                 As we got further and further away, it [the Earth] diminished in size. Finally it shrank to

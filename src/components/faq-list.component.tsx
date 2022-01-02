@@ -3,11 +3,9 @@ import { EArticleCategory } from '@/api/hooks/api-article.hook';
 import React from 'react';
 import { Article } from './article.component';
 
-interface IProps {
-    category: EArticleCategory | undefined;
-}
-export const ArticleList = ({ category }: IProps): JSX.Element => {
-    const { data } = apiHooks.article.useGetArticles(category);
+
+export const FaqList = (): JSX.Element => {
+    const { data } = apiHooks.faq.useGetFaqList();
 
     return (
         <>

@@ -1,12 +1,12 @@
 import { apiHooks } from '@/api/api-hook';
-import { EArticleId } from '@/api/enum';
+import { EPageId } from '@/api/enum';
 import { Article } from '@/components/article.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import React from 'react';
 
 export default function Contact(): JSX.Element {
-    const { data } = apiHooks.useGetArticleById(EArticleId.Contacts);
+    const { data } = apiHooks.page.useGetPageById(EPageId.Contacts);
     return (
         <>
             <Navigation />

@@ -1,4 +1,4 @@
-import { EArticleCategory } from '@/api/api-hook';
+import { EArticleCategory } from '@/api/hooks/api-article.hook';
 import { ArticleList } from '@/components/article-list.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';

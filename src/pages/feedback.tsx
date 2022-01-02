@@ -1,12 +1,12 @@
 import { apiHooks } from '@/api/api-hook';
-import { EArticleId } from '@/api/enum';
+import { EPageId } from '@/api/enum';
 import { Article } from '@/components/article.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import React from 'react';
 
 export default function Feedback(): JSX.Element {
-    const { data } = apiHooks.useGetArticleById(EArticleId.Feedback);
+    const { data } = apiHooks.page.useGetPageById(EPageId.Feedback);
     return (
         <>
             <Navigation />
