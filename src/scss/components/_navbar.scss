@@ -23,6 +23,9 @@
     .navbar-brand {
         font-weight: $headings-font-weight;
     }
+	a {
+		text-decoration :none;
+	}
 
     .navbar-toggler {
         font-size: 0.75rem;
