@@ -1,4 +1,3 @@
-import { EArticleCategory } from '@/api/hooks/api-article.hook';
 import { ArticleListContainer } from '@/containers/article-list.container';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
