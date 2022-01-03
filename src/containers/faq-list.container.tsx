@@ -16,7 +16,7 @@ export const FaqListContainer = (): JSX.Element => {
                             id={item.id}
                             title={item.title}
                             content={item.content}
-                            dateObj={item.dateObj}
+                            dateObj={undefined}
                             showDivider={index + 1 !== data?.items?.length}
                         />
                     );
