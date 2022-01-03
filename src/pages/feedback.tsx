@@ -3,10 +3,11 @@ import { EPageId } from '@/api/enum';
 import { Article } from '@/components/article.component';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
+import { Page } from '@/components/page.component';
 import React from 'react';
 
 export default function Feedback(): JSX.Element {
-    const { data } = apiHooks.page.useGetPageById(EPageId.Feedback);
+    const { data, isLoading } = apiHooks.page.useGetPageById(EPageId.Feedback);
     return (
         <>
             <Navigation />
@@ -18,7 +19,8 @@ export default function Feedback(): JSX.Element {
                     <div className="row gx-4 gx-lg-5 justify-content-center">
                         <div className="col-md-10 col-lg-8 col-xl-7">
                             {data && (
-                                <Article
+								<Page
+									isLoading={isLoading}
                                     showDivider={false}
                                     content={data.content}
                                     dateObj={undefined}

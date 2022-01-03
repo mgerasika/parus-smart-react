@@ -1,5 +1,5 @@
 import { EArticleCategory } from '@/api/hooks/api-article.hook';
-import { ArticleList } from '@/components/article-list.component';
+import { ArticleListContainer } from '@/containers/article-list.container';
 import { Header } from '@/components/header.component';
 import { Navigation } from '@/components/navigation.component';
 import Head from 'next/head';
@@ -24,7 +24,7 @@ export default function Index(): JSX.Element {
             <div className="container px-4 px-lg-5">
                 <div className="row gx-4 gx-lg-5 justify-content-center">
                     <div className="col-md-10 col-lg-8 col-xl-7">
-                        <ArticleList category={EArticleCategory.News} />
+                        <ArticleListContainer  />
                     </div>
                 </div>
             </div>
