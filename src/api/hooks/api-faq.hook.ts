@@ -2,6 +2,7 @@ import axios from 'axios';
 import qs from 'qs';
 import { useQuery, UseQueryResult } from 'react-query';
 import { createCollection, ICollection } from '../collection';
+import { CONST } from '../constants';
 import { EPageId } from '../enum';
 import { createFaqDto, IFaqDto } from '../model/faq.dto';
 
@@ -22,7 +23,7 @@ const useGetFaqList = (): UseQueryResult<ICollection<IFaqDto>> => {
     );
 
     return useQuery<ICollection<IFaqDto>>(`faq`, () =>
-        axios.get(`https://parus-smart.herokuapp.com/api/faqs?${query}`).then((r) => {
+        axios.get(CONST.SERVER_URL + `api/faqs?${query}`).then((r) => {
             const data = r.data.data.map((item: any) => createFaqDto(item));
             return createCollection<IFaqDto>(data);
         }),
@@ -31,7 +32,7 @@ const useGetFaqList = (): UseQueryResult<ICollection<IFaqDto>> => {
 
 const useGetFaqById = (id: EPageId | string): UseQueryResult<IFaqDto> => {
     return useQuery<IFaqDto>(`faq-by-id-${id}`, () =>
-        axios.get(`https://parus-smart.herokuapp.com/api/faqs/${id}`).then((r) => {
+        axios.get(CONST.SERVER_URL + `api/faqs/${id}`).then((r) => {
             const data = createFaqDto(r.data.data);
             return data;
         }),
